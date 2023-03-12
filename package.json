@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/native": "^11.10.6",
+    "@hookform/resolvers": "^2.9.11",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-masked-view/masked-view": "^0.2.8",
     "@react-navigation/native": "^6.1.6",
