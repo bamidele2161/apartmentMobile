@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { View, Text, Animated } from "react-native";
 import { styles } from "./style";
 
-const Home = ({ navigation }) => {
+const SplashScreen = ({ navigation }) => {
   let moveAnimation = new Animated.Value(0);
 
   const moveBrand = () => {
@@ -23,10 +23,15 @@ const Home = ({ navigation }) => {
     paddingHorizontal: 50,
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate("Register");
+    }, 6000);
+  }, [navigation]);
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
-        <Text style={styles.splastText}>BHome</Text>
+        <Text style={styles.splastText}>AdorableHome</Text>
         <Animated.View style={moveAnimationStyle}>
           <View style={styles.smallWrapper}>
             <Text style={styles.paragraphText}>comfortable homes...</Text>
@@ -37,4 +42,4 @@ const Home = ({ navigation }) => {
   );
 };
 
-export default Home;
+export default SplashScreen;
