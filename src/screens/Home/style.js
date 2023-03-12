@@ -10,5 +10,6 @@ export const styles = StyleSheet.create({
   splastText: {
     fontSize: 40,
     color: color.white,
+    fontWeight: "bold",
   },
 });
