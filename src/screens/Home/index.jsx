@@ -28,7 +28,7 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ color: color.primaryColor, fontSize: 30 }}>A</Text>
           </View>
         </View>
-        <LargeText mb={20}>Best Hotels to Stay In</LargeText>
+        <LargeText>Best Hotels to Stay In</LargeText>
 
         <PrimaryInput placeholder="Search for hotels" leftIcon={searchIcon} />
 

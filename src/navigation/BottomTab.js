@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  Cog8ToothIcon,
   HomeIcon,
   ShoppingCartIcon,
   UserIcon,
@@ -9,30 +10,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import Home from "../screens/Home";
 import { color } from "../color";
+import ProfileScreen from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
 
 export const BottomTabNavigator = () => {
-  // const [length, setLength] = useState(0)
-  // const navigation = useNavigation();
-
-  // useEffect(() => {
-  //     const unsubscribe = navigation.addListener('focus', () => {
-  //         getLength()
-  //     });
-  //     return unsubscribe;
-  // }, [navigation])
-
-  // const getLength = async () => {
-  //     const itemArray = await AsyncStorage.getItem("cartItems")
-  //     const items = JSON.parse(itemArray)
-  //     if(items) {
-  //         setLength(items.length)
-  //     } else{
-  //         setLength(length)
-  //     }
-  // }
-
   return (
     <Tab.Navigator
       screenOptions={{
@@ -72,14 +54,16 @@ export const BottomTabNavigator = () => {
         }}
       /> */}
 
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Settings"
-        // component={ProfileScreen}
+        component={ProfileScreen}
         options={{
           headerShown: false,
-          tabBarIcon: ({ color, size }) => <UserIcon color={color} size={30} />,
+          tabBarIcon: ({ color, size }) => (
+            <Cog8ToothIcon color={color} size={28} />
+          ),
         }}
-      /> */}
+      />
     </Tab.Navigator>
   );
 };
