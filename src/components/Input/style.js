@@ -11,7 +11,7 @@ export const Container = styled.View`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 16px;
   padding: 12px 15px;
 `;
 export const TextInputWrapper = styled.TextInput`

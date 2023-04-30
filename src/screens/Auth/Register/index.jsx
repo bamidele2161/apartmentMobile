@@ -23,6 +23,7 @@ const Register = ({ navigation }) => {
 
   const onSubmit = (formData) => {
     console.log("form data", formData);
+    navigation.navigate("Home");
   };
 
   return (

@@ -1,40 +1,55 @@
 import React, { useEffect } from "react";
-import { View, Text, Animated } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  SafeAreaView,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 import { styles } from "./style";
+import { MagnifyingGlassIcon, Bars3Icon } from "react-native-heroicons/outline";
+import { color } from "../../color";
+import { generalStyles, LargeText } from "../../components/text/texts";
+import PrimaryInput from "../../components/Input";
+import FeaturedRow from "../../components/ScrollBar";
+import { hotel } from "../../utils/database";
 
-const Home = ({ navigation }) => {
-  let moveAnimation = new Animated.Value(0);
+let searchIcon = <MagnifyingGlassIcon color={color.gray} />;
 
-  const moveBrand = () => {
-    Animated.timing(moveAnimation, {
-      toValue: -10,
-      timing: 4000,
-      useNativeDriver: true,
-    }).start();
-  };
-
-  useEffect(() => {
-    moveBrand();
-  }, []);
-
-  const moveAnimationStyle = {
-    transform: [{ translateY: moveAnimation }],
-    width: "100%",
-    paddingHorizontal: 50,
-  };
-
+const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.textContainer}>
-        <Text style={styles.splastText}>BHome</Text>
-        <Animated.View style={moveAnimationStyle}>
-          <View style={styles.smallWrapper}>
-            <Text style={styles.paragraphText}>comfortable homes...</Text>
+    <SafeAreaView style={styles.container}>
+      {/*Header*/}
+      <View style={styles.innerContainer}>
+        <View style={styles.top}>
+          <Bars3Icon color={color.primaryColor} size={30} />
+          <View style={styles.imageView}>
+            <Text style={{ color: color.primaryColor, fontSize: 30 }}>A</Text>
           </View>
-        </Animated.View>
+        </View>
+        <LargeText mb={20}>Best Hotels to Stay In</LargeText>
+
+        <PrimaryInput placeholder="Search for hotels" leftIcon={searchIcon} />
+
+        {/*body */}
+        <ScrollView style={styles.scrollContainer}>
+          {/* category */}
+          <FeaturedRow
+            list={hotel}
+            scrollTitle="Apartment"
+            scrollParagraph="Choose your best home"
+          />
+          {/* features */}
+          <FeaturedRow
+            list={hotel}
+            scrollTitle="Rooms"
+            scrollParagraph="Choose your best room"
+          />
+        </ScrollView>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
-export default Home;
+export default HomeScreen;

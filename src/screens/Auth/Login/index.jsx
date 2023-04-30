@@ -20,6 +20,7 @@ const Login = ({ navigation }) => {
 
   const onSubmit = (formData) => {
     console.log("form data", formData);
+    navigation.navigate("Home");
   };
   return (
     <View style={styles.container}>

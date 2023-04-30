@@ -14,6 +14,7 @@ const PrimaryInput = ({
   password,
   value,
   onChangeText,
+  leftIcon,
 }) => {
   const [showPassword, setShowPassword] = useState(true);
   const [active, setActive] = useState(false);
@@ -26,6 +27,7 @@ const PrimaryInput = ({
           <Container
             border={active ? "1px solid #9403fc" : "1px solid #c9c9c9"}
           >
+            {leftIcon}
             <TextInputWrapper
               onBlur={() => setActive(false)}
               onFocus={() => setActive(true)}
@@ -41,6 +43,8 @@ const PrimaryInput = ({
           <Container
             border={active ? "1px solid #9403fc" : "1px solid #c9c9c9"}
           >
+            {leftIcon}
+
             <TextInputWrapper
               onBlur={() => setActive(false)}
               onFocus={() => setActive(true)}

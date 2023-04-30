@@ -2,7 +2,9 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "../screens/Auth/Login";
 import Register from "../screens/Auth/Register";
+import Home from "../screens/Home";
 import SplashScreen from "../screens/onboarding/splashScreen";
+import { BottomTabNavigator } from "./BottomTab";
 
 // const Stack = createNativeStackNavigator();
 const Stack = createStackNavigator();
@@ -27,6 +29,13 @@ export default function StackNavigator() {
       <Stack.Screen
         name="Login"
         component={Login}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Home"
+        component={BottomTabNavigator}
         options={{
           headerShown: false,
         }}
